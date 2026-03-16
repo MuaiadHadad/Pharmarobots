@@ -1,54 +1,57 @@
 ﻿import { motion } from "framer-motion";
-import { Stethoscope, Brain, Activity, Microscope, Shield, Cpu } from "lucide-react";
+import { Lightbulb, GraduationCap, Handshake, Briefcase, Network, Rocket } from "lucide-react";
 import styles from "./Areas.module.css";
+
 const solucoes = [
 	{
-		icon: Stethoscope,
-		title: "Cirurgia Minimamente Invasiva",
-		desc: "Sistemas robóticos de alta precisão para cirurgias laparoscópicas com controlo háptico e visão 3D estereoscópica.",
+		icon: Lightbulb,
+		title: "Valorização do Conhecimento",
+		desc: "Apoio à transformação de resultados científicos e tecnológicos em soluções com potencial de aplicação, mercado e impacto.",
 		color: "#0ea5e9",
-		tag: "Cirurgia",
+		tag: "Conhecimento",
 	},
 	{
-		icon: Brain,
-		title: "Diagnóstico por IA",
-		desc: "Algoritmos de deep learning treinados em milhões de casos clínicos para diagnóstico imagiológico assistido.",
+		icon: GraduationCap,
+		title: "Capacitação e Formação",
+		desc: "Programas, workshops e iniciativas práticas para reforçar competências em inovação, propriedade intelectual e empreendedorismo.",
 		color: "#06d6a0",
-		tag: "Inteligência Artificial",
+		tag: "Capacitação",
 	},
 	{
-		icon: Activity,
-		title: "Reabilitação Robótica",
-		desc: "Exoesqueletos e sistemas de reabilitação motora para recuperação pós-cirúrgica e neurológica.",
+		icon: Handshake,
+		title: "Ligação ao Tecido Empresarial",
+		desc: "Promoção de pontes entre academia, centros de investigação e empresas para gerar colaboração, cocriação e transferência efetiva.",
 		color: "#7c3aed",
-		tag: "Reabilitação",
+		tag: "Colaboração",
 	},
 	{
-		icon: Microscope,
-		title: "Cirurgia de Precisão",
-		desc: "Robótica de nano-escala para intervenções oncológicas e neurocirúrgicas com margem de erro inferior a 0.1mm.",
+		icon: Briefcase,
+		title: "Empreendedorismo de Base Científica",
+		desc: "Acompanhamento de ideias e equipas na preparação de modelos de negócio, validação e aproximação ao investimento.",
 		color: "#f59e0b",
-		tag: "Oncologia",
+		tag: "Startups",
 	},
 	{
-		icon: Shield,
-		title: "Sistemas de Segurança",
-		desc: "Monitorização em tempo real com IA para deteção precoce de complicações durante procedimentos cirúrgicos.",
+		icon: Network,
+		title: "Rede Regional de Inovação",
+		desc: "Articulação entre instituições e agentes regionais para criar massa crítica e dinamizar um ecossistema de inovação mais integrado.",
 		color: "#ef4444",
-		tag: "Segurança",
+		tag: "Ecossistema",
 	},
 	{
-		icon: Cpu,
-		title: "Plataforma de Dados",
-		desc: "Integração com sistemas hospitalares HIS/PACS para análise preditiva e gestão de dados clínicos em tempo real.",
-		color: "#0ea5e9",
-		tag: "Dados",
+		icon: Rocket,
+		title: "Projetos com Impacto",
+		desc: "Dinamização de iniciativas orientadas para resultados, com foco em competitividade, inovação aberta e desenvolvimento territorial.",
+		color: "#e11d48",
+		tag: "Impacto",
 	},
 ];
+
 const cVariants = {
 	hidden: {},
 	show: { transition: { staggerChildren: 0.1 } },
 };
+
 const cCard = {
 	hidden: { opacity: 0, y: 36 },
 	show: {
@@ -57,6 +60,7 @@ const cCard = {
 		transition: { duration: 0.55, ease: [0.4, 0, 0.2, 1] },
 	},
 };
+
 export default function Areas() {
 	return (
 		<section id="solucoes" className={`section section-dark ${styles.section}`}>
@@ -68,15 +72,16 @@ export default function Areas() {
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.6 }}
 				>
-					<span className="tag">As Nossas Soluções</span>
+					<span className="tag">Áreas de atuação</span>
 					<h2 className="section-title">
-						Tecnologia robótica
+						Um programa para aproximar
 						<br />
-						para cada especialidade
+						ciência, inovação e mercado
 					</h2>
 					<p className="section-sub">
-						Do diagnóstico à reabilitação, as nossas plataformas integradas cobrem
-						todo o espectro do cuidado clínico com precisão e segurança.
+						O INOVC promove uma abordagem integrada à inovação, apoiando a
+						transferência de conhecimento, a colaboração institucional e a criação
+						de novas oportunidades para a região.
 					</p>
 				</motion.div>
 
@@ -87,41 +92,45 @@ export default function Areas() {
 					whileInView="show"
 					viewport={{ once: true, amount: 0.1 }}
 				>
-					{solucoes.map(({ icon: Icon, title, desc, color, tag }) => (
-						<motion.article
-							key={title}
-							className={styles.card}
-							variants={cCard}
-							whileHover={{ y: -8, borderColor: color }}
-							transition={{ type: "spring", stiffness: 280 }}
-							style={{ "--card-color": color }}
-						>
-							<div className={styles.cardTop}>
-								<div
-									className={styles.iconBox}
-									style={{ background: color + "18", color }}
-								>
-									<Icon size={22} />
-								</div>
-								<span
-									className={styles.cardTag}
-									style={{
-										color,
-										background: color + "15",
-										border: `1px solid ${color}30`,
-									}}
-								>
-									{tag}
-								</span>
-							</div>
-							<h3>{title}</h3>
-							<p>{desc}</p>
-							<div
-								className={styles.cardLine}
-								style={{ background: color }}
-							/>
-						</motion.article>
-					))}
+					{solucoes.map((item) => {
+            const IconComponent = item.icon;
+
+            return (
+            <motion.article
+              key={item.title}
+              className={styles.card}
+              variants={cCard}
+              whileHover={{ y: -8, borderColor: item.color }}
+              transition={{ type: "spring", stiffness: 280 }}
+              style={{ "--card-color": item.color }}
+            >
+              <div className={styles.cardTop}>
+                <div
+                  className={styles.iconBox}
+                  style={{ background: item.color + "18", color: item.color }}
+                >
+                  <IconComponent size={22} />
+                </div>
+                <span
+                  className={styles.cardTag}
+                  style={{
+                    color: item.color,
+                    background: item.color + "15",
+                    border: `1px solid ${item.color}30`,
+                  }}
+                >
+                  {item.tag}
+                </span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+              <div
+                className={styles.cardLine}
+                style={{ background: item.color }}
+              />
+            </motion.article>
+            );
+          })}
 				</motion.div>
 			</div>
 		</section>

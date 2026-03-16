@@ -2,9 +2,9 @@
 import { Globe, Share2, Play, Mail } from 'lucide-react';
 
 const cols = [
-  { title: 'Soluções', links: ['Cirurgia Robótica', 'Diagnóstico por IA', 'Reabilitação', 'Cirurgia de Precisão', 'Plataforma de Dados'] },
-  { title: 'Empresa', links: ['Sobre Nós', 'Equipa', 'Carreiras', 'Imprensa', 'Responsabilidade Social'] },
-  { title: 'Recursos', links: ['Documentação Técnica', 'Estudos Clínicos', 'Formação', 'Blog', 'FAQ'] },
+  { title: 'Projeto', links: ['Missão', 'Áreas de atuação', 'Parcerias', 'Impacto regional', 'Transferência de conhecimento'] },
+  { title: 'Iniciativas', links: ['Capacitação', 'Empreendedorismo', 'Workshops', 'Eventos', 'Boas práticas'] },
+  { title: 'Recursos', links: ['Notícias', 'Agenda', 'Documentos', 'FAQ', 'Contactos'] },
 ];
 
 export default function Footer() {
@@ -14,19 +14,19 @@ export default function Footer() {
         <div className={styles.brand}>
           <a className={styles.logo} href="#">
             <span className={styles.dot} />
-            Med<span>Robots</span>
+            IN<span>OVC</span>
           </a>
-          <p>Pioneiros em robótica médica em Portugal. Tecnologia de precisão ao serviço da saúde.</p>
+          <p>Ecossistema colaborativo para valorização do conhecimento, inovação e desenvolvimento regional.</p>
           <div className={styles.socials}>
-            <a href="#" aria-label="LinkedIn"><Globe size={18} /></a>
-            <a href="#" aria-label="Twitter"><Share2 size={18} /></a>
-            <a href="#" aria-label="YouTube"><Play size={18} /></a>
-            <a href="mailto:info@medrobots.pt" aria-label="Email"><Mail size={18} /></a>
+            <a href="#" aria-label="Website"><Globe size={18} /></a>
+            <a href="#" aria-label="Redes"><Share2 size={18} /></a>
+            <a href="#" aria-label="Vídeos"><Play size={18} /></a>
+            <a href="mailto:inovc@esenfc.pt" aria-label="Email"><Mail size={18} /></a>
           </div>
           <div className={styles.certs}>
-            <span>CE IIb</span>
-            <span>ISO 13485</span>
-            <span>FDA 510(k)</span>
+            <span>Inovação</span>
+            <span>Conhecimento</span>
+            <span>Região Centro</span>
           </div>
         </div>
 
@@ -39,10 +39,10 @@ export default function Footer() {
       </div>
 
       <div className={`container ${styles.bottom}`}>
-        <p>© 2026 MedRobots, Lda. Todos os direitos reservados.</p>
+        <p>© 2026 INOVC. Todos os direitos reservados.</p>
         <div className={styles.legal}>
           <a href="#">Política de Privacidade</a>
-          <a href="#">Termos de Uso</a>
+          <a href="#">Termos de Utilização</a>
           <a href="#">Cookies</a>
         </div>
       </div>

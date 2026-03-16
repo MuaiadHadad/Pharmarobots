@@ -4,9 +4,9 @@ import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navItems = [
-  { label: 'Soluções', href: '#solucoes' },
-  { label: 'Tecnologia', href: '#tecnologia' },
-  { label: 'Sobre Nós', href: '#sobre' },
+  { label: 'Áreas', href: '#solucoes' },
+  { label: 'Projeto', href: '#tecnologia' },
+  { label: 'Sobre', href: '#sobre' },
   { label: 'Parceiros', href: '#parceiros' },
   { label: 'Contacto', href: '#contacto' },
 ];
@@ -31,7 +31,7 @@ export default function Navbar() {
       <div className={`container ${styles.inner}`}>
         <a className={styles.logo} href="#">
           <span className={styles.logoDot} />
-          Med<span>Robots</span>
+          IN<span>OVC</span>
         </a>
 
         <nav className={styles.nav}>
@@ -41,7 +41,7 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.actions}>
-          <a href="#contacto" className="btn btn-primary">Fale Connosco</a>
+          <a href="#contacto" className="btn btn-primary">Entrar em contacto</a>
           <button className={styles.burger} onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -63,7 +63,7 @@ export default function Navbar() {
               </a>
             ))}
             <a href="#contacto" className={`btn btn-primary ${styles.mobileBtn}`} onClick={() => setOpen(false)}>
-              Fale Connosco
+              Entrar em contacto
             </a>
           </motion.div>
         )}

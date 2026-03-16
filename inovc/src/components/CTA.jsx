@@ -1,10 +1,10 @@
 ﻿import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import styles from "./CTA.module.css";
+
 export default function CTA() {
   return (
     <>
-      {/* Sobre Nós section */}
       <section id="sobre" className={`section ${styles.about}`}>
         <div className="container">
           <motion.div
@@ -15,32 +15,33 @@ export default function CTA() {
             transition={{ duration: 0.7 }}
           >
             <div className={styles.aboutText}>
-              <span className="tag">Sobre a MedRobots</span>
+              <span className="tag">Sobre o INOVC</span>
               <h2 className="section-title">
-                Fundada em Portugal,
+                Cooperação regional
                 <br />
-                <span className={styles.grad}>pensada para o mundo</span>
+                com{" "}
+                <span className={styles.grad}>foco em inovação aplicada</span>
               </h2>
               <p>
-                Somos uma empresa portuguesa de biotecnologia e robótica médica,
-                fundada em 2009 por uma equipa multidisciplinar de engenheiros,
-                cirurgiões e investigadores. A nossa missão é democratizar o acesso
-                a cirurgia robótica de alta precisão em todo o sistema de saúde
-                português e ibérico.
+                O INOVC é uma iniciativa orientada para a valorização do
+                conhecimento, para a criação de sinergias entre instituições e
+                para o reforço da capacidade de inovação do território. A sua
+                atuação cruza investigação, formação, empreendedorismo e
+                colaboração com o tecido empresarial.
               </p>
               <p>
-                Trabalhamos em parceria com os principais hospitais, universidades
-                e centros de investigação para desenvolver e implementar soluções
-                que melhoram a qualidade de vida dos doentes e a eficiência
-                clínica.
+                Através de uma lógica de rede, o projeto contribui para
+                aproximar atores, dinamizar oportunidades, apoiar novas ideias e
+                promover resultados com impacto económico, científico e social na
+                região centro.
               </p>
             </div>
             <div className={styles.aboutGrid}>
               {[
-                { v: "2009", l: "Ano de fundação", c: "#0ea5e9" },
-                { v: "120+", l: "Colaboradores", c: "#06d6a0" },
-                { v: "8", l: "Países com presença", c: "#7c3aed" },
-                { v: "€40M", l: "Investimento em I&D", c: "#f59e0b" },
+                { v: "+20", l: "Entidades na rede", c: "#0ea5e9" },
+                { v: "Workshops", l: "Capacitação e eventos", c: "#06d6a0" },
+                { v: "Startups", l: "Ideias com potencial", c: "#7c3aed" },
+                { v: "Centro", l: "Âmbito territorial", c: "#f59e0b" },
               ].map(({ v, l, c }) => (
                 <motion.div
                   key={l}
@@ -56,7 +57,6 @@ export default function CTA() {
         </div>
       </section>
 
-      {/* CTA banner */}
       <section id="contacto" className={styles.ctaBanner}>
         <motion.div
           className={styles.glow}
@@ -80,28 +80,29 @@ export default function CTA() {
                   borderColor: "rgba(255,255,255,0.2)",
                 }}
               >
-                Vamos Trabalhar Juntos
+                Contacto
               </span>
-              <h2>Pronto para transformar a cirurgia no seu hospital?</h2>
+              <h2>Quer saber mais sobre o projeto ou integrar a rede?</h2>
               <p>
-                Agende uma demonstração gratuita e descubra como a MedRobots pode
-                elevar os seus resultados clínicos com robótica de precisão.
+                Entre em contacto para obter informação sobre iniciativas,
+                parcerias, ações de capacitação e oportunidades de colaboração no
+                âmbito do INOVC.
               </p>
               <div className={styles.contacts}>
                 <a
-                  href="mailto:info@medrobots.pt"
+                  href="mailto:inovc@esenfc.pt"
                   className={styles.contact}
                 >
-                  <Mail size={16} /> info@medrobots.pt
+                  <Mail size={16} /> inovc@esenfc.pt
                 </a>
                 <a
-                  href="tel:+351210000000"
+                  href="tel:+351239487200"
                   className={styles.contact}
                 >
-                  <Phone size={16} /> +351 210 000 000
+                  <Phone size={16} /> +351 239 487 200
                 </a>
                 <span className={styles.contact}>
-                  <MapPin size={16} /> Lisboa, Portugal
+                  <MapPin size={16} /> Coimbra, Portugal
                 </span>
               </div>
             </div>
@@ -116,20 +117,20 @@ export default function CTA() {
               <div className={styles.formGroup}>
                 <input
                   type="email"
-                  placeholder="Email institucional"
+                  placeholder="Email"
                   className={styles.input}
                 />
               </div>
               <div className={styles.formGroup}>
                 <input
                   type="text"
-                  placeholder="Hospital / Instituição"
+                  placeholder="Instituição / Empresa"
                   className={styles.input}
                 />
               </div>
               <div className={styles.formGroup}>
                 <textarea
-                  placeholder="Mensagem (opcional)"
+                  placeholder="Como podemos ajudar?"
                   className={styles.textarea}
                   rows={3}
                 />
@@ -142,8 +143,9 @@ export default function CTA() {
                 }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                type="button"
               >
-                Solicitar Demonstração <ArrowRight size={16} />
+                Enviar pedido <ArrowRight size={16} />
               </motion.button>
             </div>
           </motion.div>

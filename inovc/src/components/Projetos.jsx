@@ -1,23 +1,43 @@
 ﻿import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, Zap, Target, Award } from "lucide-react";
+import {
+  CheckCircle2,
+  ArrowRight,
+  FlaskConical,
+  University,
+  Building2,
+} from "lucide-react";
 import styles from "./Projetos.module.css";
+
 const features = [
-  "Precisão cirúrgica de 0.1mm com feedback háptico em tempo real",
-  "Visão estereoscópica 4K com ampliação até 10x do campo operatório",
-  "IA preditiva integrada para apoio à decisão clínica",
-  "Compatível com todos os sistemas hospitalares HIS e PACS",
-  "Certificação CE Classe IIb e aprovação FDA 510(k)",
-  "Suporte técnico 24/7 e formação certificada para cirurgiões",
+  "Promoção da transferência de conhecimento entre instituições de ensino superior, centros de I&D e empresas",
+  "Dinamização de programas de capacitação em inovação, empreendedorismo e valorização da investigação",
+  "Apoio à identificação de oportunidades de colaboração e desenvolvimento de projetos conjuntos",
+  "Estimulação da criação de novas iniciativas empresariais de base científica e tecnológica",
+  "Consolidação de uma rede regional orientada para inovação, competitividade e impacto territorial",
+  "Disseminação de resultados, boas práticas e casos de sucesso do ecossistema de inovação",
 ];
-const awards = [
-  { icon: Zap, label: "Inovação do Ano", sub: "Portugal Health Awards 2024" },
-  { icon: Target, label: "Melhor MedTech", sub: "Web Summit Lisbon 2023" },
-  { icon: Award, label: "Top 10 Robótica", sub: "European Robotics Forum" },
+
+const consortium = [
+  {
+    icon: Building2,
+    label: "Empresas & entidades",
+    sub: "Ligação ao mercado, validação de soluções e aproximação a desafios reais",
+  },
+  {
+    icon: University,
+    label: "Ensino superior",
+    sub: "Produção de conhecimento, formação avançada e articulação institucional",
+  },
+  {
+    icon: FlaskConical,
+    label: "I&D & inovação",
+    sub: "Valorização científica, transferência de tecnologia e apoio ao empreendedorismo",
+  },
 ];
+
 export default function Projetos() {
   return (
     <>
-      {/* About / Technology section */}
       <section id="tecnologia" className={`section ${styles.section}`}>
         <div className="container">
           <div className={`grid-2 ${styles.grid}`}>
@@ -28,16 +48,18 @@ export default function Projetos() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="tag">Tecnologia de Ponta</span>
+              <span className="tag">Projeto INOVC</span>
               <h2 className="section-title">
-                Robótica médica com
+                Uma plataforma de
                 <br />
-                <span className={styles.grad}>inteligência real</span>
+                <span className={styles.grad}>articulação para a inovação</span>
               </h2>
               <p className={styles.sub}>
-                A nossa plataforma robótica integra inteligência artificial, sensores
-                de alta precisão e conectividade em nuvem para oferecer ao cirurgião
-                total controlo e visibilidade durante cada procedimento.
+                O INOVC afirma-se como uma iniciativa de cooperação e dinamização do
+                ecossistema regional, promovendo a ligação entre conhecimento,
+                empreendedorismo, transferência de tecnologia e desenvolvimento económico.
+                O objetivo é acelerar a valorização dos ativos científicos e reforçar a
+                capacidade de inovação das organizações.
               </p>
               <ul className={styles.features}>
                 {features.map((f) => (
@@ -48,7 +70,7 @@ export default function Projetos() {
                 ))}
               </ul>
               <a href="#contacto" className={`btn btn-primary ${styles.cta}`}>
-                Solicitar Demonstração <ArrowRight size={16} />
+                Pedir mais informação <ArrowRight size={16} />
               </a>
             </motion.div>
 
@@ -60,67 +82,66 @@ export default function Projetos() {
               transition={{ duration: 0.7 }}
             >
               <div className={styles.panel}>
-                {/* Simulated surgical dashboard */}
                 <div className={styles.panelHeader}>
                   <div className={styles.dots}>
                     <span style={{ background: "#ef4444" }} />
                     <span style={{ background: "#f59e0b" }} />
-                    <span style={{ background: "#06d6a0" }} />
+                    <span style={{ background: "#22c55e" }} />
                   </div>
-                  <span className={styles.panelTitle}>MedRobots OS · Sala 3</span>
+                  <span className={styles.panelTitle}>INOVC Dashboard · Região Centro</span>
                   <motion.span
                     className={styles.live}
                     animate={{ opacity: [1, 0.3, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    ● LIVE
+                    ● ATIVO
                   </motion.span>
                 </div>
                 <div className={styles.panelBody}>
                   <div className={styles.metric}>
-                    <span>Precisão</span>
+                    <span>Parcerias</span>
                     <div className={styles.bar}>
                       <motion.div
                         className={styles.fill}
-                        style={{ background: "#06d6a0", "--w": "97%" }}
+                        style={{ background: "#e11d48" }}
                         initial={{ width: 0 }}
-                        whileInView={{ width: "97%" }}
+                        whileInView={{ width: "92%" }}
                         transition={{ duration: 1.2, delay: 0.4 }}
                       />
                     </div>
-                    <strong>97%</strong>
+                    <strong>92%</strong>
                   </div>
                   <div className={styles.metric}>
-                    <span>Latência</span>
+                    <span>Capacitação</span>
                     <div className={styles.bar}>
                       <motion.div
                         className={styles.fill}
-                        style={{ background: "#0ea5e9", "--w": "99%" }}
+                        style={{ background: "#f97316" }}
                         initial={{ width: 0 }}
-                        whileInView={{ width: "99%" }}
+                        whileInView={{ width: "88%" }}
                         transition={{ duration: 1.2, delay: 0.6 }}
                       />
                     </div>
-                    <strong>2ms</strong>
+                    <strong>88%</strong>
                   </div>
                   <div className={styles.metric}>
-                    <span>Estabilidade</span>
+                    <span>Transferência</span>
                     <div className={styles.bar}>
                       <motion.div
                         className={styles.fill}
-                        style={{ background: "#7c3aed", "--w": "100%" }}
+                        style={{ background: "#be123c" }}
                         initial={{ width: 0 }}
-                        whileInView={{ width: "100%" }}
+                        whileInView={{ width: "95%" }}
                         transition={{ duration: 1.2, delay: 0.8 }}
                       />
                     </div>
-                    <strong>100%</strong>
+                    <strong>95%</strong>
                   </div>
                   <div className={styles.vitals}>
                     {[
-                      { l: "HR", v: "72 bpm", c: "#ef4444" },
-                      { l: "SpO₂", v: "98%", c: "#0ea5e9" },
-                      { l: "Temp", v: "36.7°C", c: "#f59e0b" },
+                      { l: "Rede", v: "+20", c: "#e11d48" },
+                      { l: "Programas", v: "Workshops", c: "#f97316" },
+                      { l: "Foco", v: "Impacto", c: "#be123c" },
                     ].map(({ l, v, c }) => (
                       <div key={l} className={styles.vital}>
                         <span>{l}</span>
@@ -131,28 +152,30 @@ export default function Projetos() {
                 </div>
               </div>
 
-              {/* Award cards */}
               <div className={styles.awards}>
-                {awards.map(({ icon: Icon, label, sub }) => (
+                {consortium.map((item) => {
+                  const IconComponent = item.icon;
+
+                  return (
                   <motion.div
-                    key={label}
+                    key={item.label}
                     className={styles.award}
                     whileHover={{ scale: 1.04 }}
                   >
-                    <Icon size={18} color="#0ea5e9" />
+                    <IconComponent size={18} color="#e11d48" />
                     <div>
-                      <strong>{label}</strong>
-                      <span>{sub}</span>
+                      <strong>{item.label}</strong>
+                      <span>{item.sub}</span>
                     </div>
                   </motion.div>
-                ))}
+                  );
+                })}
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Partners strip */}
       <section id="parceiros" className={`${styles.partners}`}>
         <div className="container">
           <motion.p
@@ -162,17 +185,17 @@ export default function Projetos() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Confiado pelos principais hospitais e centros de investigação
+            Rede colaborativa com instituições de ensino, investigação, inovação e tecido empresarial
           </motion.p>
           <div className={styles.logosRow}>
             {[
-              "Hospital CUF",
-              "Hospital da Luz",
-              "IPO Lisboa",
-              "Champalimaud",
-              "SNS Portugal",
-              "Universidade do Porto",
-              "Instituto Gulbenkian",
+              "INOVC",
+              "ESEnfC",
+              "Universidades",
+              "Politécnicos",
+              "Centros de I&D",
+              "Empresas",
+              "Entidades regionais",
             ].map((name, i) => (
               <motion.div
                 key={name}

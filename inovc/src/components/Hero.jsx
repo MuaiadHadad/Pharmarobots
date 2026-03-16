@@ -11,10 +11,10 @@ const fadeUp = {
     transition: { duration: 0.7, delay: i * 0.13, ease: [0.4, 0, 0.2, 1] },
   }),
 };
+
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      {/* Background glows */}
       <div className={styles.glow1} />
       <div className={styles.glow2} />
       <div className={styles.grid} aria-hidden="true" />
@@ -27,38 +27,39 @@ export default function Hero() {
           variants={{ show: { transition: { staggerChildren: 0.13 } } }}
         >
           <motion.div variants={fadeUp} custom={0}>
-            <span className="tag">Robótica Médica · Portugal</span>
+            <span className="tag">INOVC · Ecossistema de Inovação</span>
           </motion.div>
 
           <motion.h1 className={styles.title} variants={fadeUp} custom={1}>
-            O Futuro da
+            Inovação, conhecimento
             <br />
-            <span className={styles.gradient}>Cirurgia Robótica</span>
+            e <span className={styles.gradient}>transferência de valor</span>
             <br />
-            começa aqui
+            para a região centro
           </motion.h1>
 
           <motion.p className={styles.sub} variants={fadeUp} custom={2}>
-            A MedRobots é pioneira em soluções de robótica médica em Portugal,
-            oferecendo tecnologia de ponta para cirurgia minimamente invasiva,
-            reabilitação e diagnóstico assistido por inteligência artificial.
+            O INOVC liga instituições de ensino superior, unidades de investigação,
+            empresas e entidades do território para acelerar a valorização do
+            conhecimento, apoiar o empreendedorismo e transformar ideias em impacto
+            económico e social.
           </motion.p>
 
           <motion.div className={styles.actions} variants={fadeUp} custom={3}>
             <a href="#solucoes" className="btn btn-primary">
-              Descobrir Soluções <ArrowRight size={16} />
+              Explorar áreas <ArrowRight size={16} />
             </a>
             <a href="#sobre" className="btn btn-ghost">
-              <Play size={15} fill="currentColor" /> Ver Demo
+              <Play size={15} fill="currentColor" /> Saber mais
             </a>
           </motion.div>
 
           <motion.div className={styles.stats} variants={fadeUp} custom={4}>
             {[
-              { v: "50+", l: "Hospitais Parceiros" },
-              { v: "10K+", l: "Cirurgias Assistidas" },
-              { v: "99.2%", l: "Taxa de Sucesso" },
-              { v: "15+", l: "Anos de I&D" },
+              { v: "+20", l: "Parceiros do ecossistema" },
+              { v: "I&D", l: "Conhecimento aplicado" },
+              { v: "Startups", l: "Apoio à inovação" },
+              { v: "Centro", l: "Foco territorial" },
             ].map(({ v, l }) => (
               <div key={l} className={styles.stat}>
                 <strong>{v}</strong>
@@ -76,14 +77,13 @@ export default function Hero() {
         >
           <div className={styles.visualInner}>
             <RobotIllustration />
-            {/* floating badge */}
             <motion.div
               className={styles.badge1}
               animate={{ y: [-6, 6, -6] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
             >
               <span className={styles.badgeDot} style={{ background: "#06d6a0" }} />
-              Cirurgia em tempo real
+              Capacitação e empreendedorismo
             </motion.div>
             <motion.div
               className={styles.badge2}
@@ -91,7 +91,7 @@ export default function Hero() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <span className={styles.badgeDot} style={{ background: "#0ea5e9" }} />
-              IA integrada
+              Transferência de tecnologia
             </motion.div>
           </div>
         </motion.div>
