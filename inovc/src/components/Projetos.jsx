@@ -1,4 +1,5 @@
 ﻿import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 import {
   CheckCircle2,
   ArrowRight,
@@ -69,9 +70,9 @@ export default function Projetos() {
                   </li>
                 ))}
               </ul>
-              <a href="#contacto" className={`btn btn-primary ${styles.cta}`}>
+              <NavLink to="/contacto" className={`btn btn-primary ${styles.cta}`}>
                 Pedir mais informação <ArrowRight size={16} />
-              </a>
+              </NavLink>
             </motion.div>
 
             <motion.div
@@ -157,17 +158,17 @@ export default function Projetos() {
                   const IconComponent = item.icon;
 
                   return (
-                  <motion.div
-                    key={item.label}
-                    className={styles.award}
-                    whileHover={{ scale: 1.04 }}
-                  >
-                    <IconComponent size={18} color="#e11d48" />
-                    <div>
-                      <strong>{item.label}</strong>
-                      <span>{item.sub}</span>
-                    </div>
-                  </motion.div>
+                    <motion.div
+                      key={item.label}
+                      className={styles.award}
+                      whileHover={{ scale: 1.04 }}
+                    >
+                      <IconComponent size={18} color="#e11d48" />
+                      <div>
+                        <strong>{item.label}</strong>
+                        <span>{item.sub}</span>
+                      </div>
+                    </motion.div>
                   );
                 })}
               </div>

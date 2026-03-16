@@ -1,10 +1,29 @@
-﻿import styles from './Footer.module.css';
+﻿import { NavLink } from 'react-router-dom';
+import styles from './Footer.module.css';
 import { Globe, Share2, Play, Mail } from 'lucide-react';
 
 const cols = [
-  { title: 'Projeto', links: ['Missão', 'Áreas de atuação', 'Parcerias', 'Impacto regional', 'Transferência de conhecimento'] },
-  { title: 'Iniciativas', links: ['Capacitação', 'Empreendedorismo', 'Workshops', 'Eventos', 'Boas práticas'] },
-  { title: 'Recursos', links: ['Notícias', 'Agenda', 'Documentos', 'FAQ', 'Contactos'] },
+  { title: 'Projeto', links: [
+    { label: 'Missão', to: '/projeto' },
+    { label: 'Áreas de atuação', to: '/areas' },
+    { label: 'Parcerias', to: '/parceiros' },
+    { label: 'Impacto regional', to: '/projeto' },
+    { label: 'Transferência de conhecimento', to: '/sobre' },
+  ] },
+  { title: 'Iniciativas', links: [
+    { label: 'Capacitação', to: '/areas' },
+    { label: 'Empreendedorismo', to: '/areas' },
+    { label: 'Workshops', to: '/sobre' },
+    { label: 'Eventos', to: '/sobre' },
+    { label: 'Boas práticas', to: '/projeto' },
+  ] },
+  { title: 'Recursos', links: [
+    { label: 'Notícias', to: '/sobre' },
+    { label: 'Agenda', to: '/sobre' },
+    { label: 'Documentos', to: '/projeto' },
+    { label: 'FAQ', to: '/contacto' },
+    { label: 'Contactos', to: '/contacto' },
+  ] },
 ];
 
 export default function Footer() {
@@ -12,10 +31,10 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.top}`}>
         <div className={styles.brand}>
-          <a className={styles.logo} href="#">
+          <NavLink className={styles.logo} to="/">
             <span className={styles.dot} />
             IN<span>OVC</span>
-          </a>
+          </NavLink>
           <p>Ecossistema colaborativo para valorização do conhecimento, inovação e desenvolvimento regional.</p>
           <div className={styles.socials}>
             <a href="#" aria-label="Website"><Globe size={18} /></a>
@@ -33,7 +52,7 @@ export default function Footer() {
         {cols.map(({ title, links }) => (
           <div key={title} className={styles.col}>
             <h4>{title}</h4>
-            {links.map(l => <a key={l} href="#">{l}</a>)}
+            {links.map(({ label, to }) => <NavLink key={label} to={to}>{label}</NavLink>)}
           </div>
         ))}
       </div>

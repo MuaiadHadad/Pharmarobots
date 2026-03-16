@@ -1,4 +1,5 @@
 ﻿import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
 import styles from "./Hero.module.css";
 import RobotIllustration from "./RobotIllustration";
@@ -46,12 +47,12 @@ export default function Hero() {
           </motion.p>
 
           <motion.div className={styles.actions} variants={fadeUp} custom={3}>
-            <a href="#solucoes" className="btn btn-primary">
+            <NavLink to="/areas" className="btn btn-primary">
               Explorar áreas <ArrowRight size={16} />
-            </a>
-            <a href="#sobre" className="btn btn-ghost">
+            </NavLink>
+            <NavLink to="/sobre" className="btn btn-ghost">
               <Play size={15} fill="currentColor" /> Saber mais
-            </a>
+            </NavLink>
           </motion.div>
 
           <motion.div className={styles.stats} variants={fadeUp} custom={4}>
