@@ -1,48 +1,28 @@
 ﻿.section {}
-.heading {
-  text-align: center;
-  margin-bottom: 56px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-.heading h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-.sub {
-  color: var(--muted);
-  max-width: 520px;
-  text-align: center;
-  line-height: 1.7;
-}
+.head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 56px; max-width: 640px; }
+.grid { margin-top: 0; }
 .card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: border-color var(--transition);
+  background: rgba(10,22,40,0.7);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px; padding: 28px;
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative; overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s; cursor: pointer;
 }
-.card:hover { border-color: var(--primary); }
-.iconWrap {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.card:hover { box-shadow: 0 12px 48px rgba(14,165,233,0.1); }
+.cardTop { display: flex; align-items: center; justify-content: space-between; }
+.iconBox {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
-.card h3 {
-  font-size: 1.08rem;
-  font-weight: 700;
+.cardTag {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 999px;
 }
-.card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.65;
+.card h3 { font-size: 1.02rem; font-weight: 700; color: #f0f6ff; line-height: 1.4; }
+.card p { color: #64748b; font-size: 0.88rem; line-height: 1.65; flex: 1; }
+.cardLine {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  opacity: 0; transition: opacity 0.3s;
 }
+.card:hover .cardLine { opacity: 1; }

@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
 
-const links = [
-  { href: '#sobre', label: 'Sobre' },
-  { href: '#areas', label: 'Áreas' },
-  { href: '#projetos', label: 'Projetos' },
-  { href: '#equipa', label: 'Equipa' },
-  { href: '#contacto', label: 'Contacto' },
+const navItems = [
+  { label: 'Soluções', href: '#solucoes' },
+  { label: 'Tecnologia', href: '#tecnologia' },
+  { label: 'Sobre Nós', href: '#sobre' },
+  { label: 'Parceiros', href: '#parceiros' },
+  { label: 'Contacto', href: '#contacto' },
 ];
 
 export default function Navbar() {
@@ -16,29 +16,32 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    const fn = () => setScrolled(window.scrollY > 30);
+    window.addEventListener('scroll', fn);
+    return () => window.removeEventListener('scroll', fn);
   }, []);
 
   return (
     <motion.header
-      className={`${styles.topbar} ${scrolled ? styles.scrolled : ''}`}
-      initial={{ y: -80, opacity: 0 }}
+      className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}
+      initial={{ y: -90, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+      transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
     >
-      <div className={`container ${styles.nav}`}>
-        <a className={styles.logo} href="#">INOV<span>C</span></a>
+      <div className={`container ${styles.inner}`}>
+        <a className={styles.logo} href="#">
+          <span className={styles.logoDot} />
+          Med<span>Robots</span>
+        </a>
 
-        <nav className={styles.desktopNav}>
-          {links.map(({ href, label }) => (
-            <a key={href} href={href} className={styles.navLink}>{label}</a>
+        <nav className={styles.nav}>
+          {navItems.map(({ label, href }) => (
+            <a key={href} href={href} className={styles.link}>{label}</a>
           ))}
         </nav>
 
-        <div className={styles.navActions}>
-          <button className="btn btn-outline">Entrar</button>
+        <div className={styles.actions}>
+          <a href="#contacto" className="btn btn-primary">Fale Connosco</a>
           <button className={styles.burger} onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -48,22 +51,20 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className={styles.mobileMenu}
+            className={styles.mobile}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.3 }}
           >
-            {links.map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
-                className={styles.mobileLink}
-                onClick={() => setOpen(false)}
-              >
+            {navItems.map(({ label, href }) => (
+              <a key={href} href={href} className={styles.mobileLink} onClick={() => setOpen(false)}>
                 {label}
               </a>
             ))}
+            <a href="#contacto" className={`btn btn-primary ${styles.mobileBtn}`} onClick={() => setOpen(false)}>
+              Fale Connosco
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
