@@ -4,83 +4,103 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: #ffffff;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  background: rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: box-shadow 0.25s, border-color 0.25s;
 }
 
 .scrolled {
-  border-bottom-color: #ececec;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
 }
 
 .inner {
-  height: 84px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .logo {
-  color: #121212;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  padding: 8px 14px;
 }
 
-.logo span {
-  font-weight: 800;
+.logoImage {
+  display: block;
+  height: 68px;
+  width: auto;
+  max-width: min(300px, 40vw);
+  object-fit: contain;
 }
 
 .nav {
   display: flex;
-  gap: 34px;
+  align-items: center;
+  gap: 4px;
 }
 
 .link {
   text-decoration: none;
-  color: #8a8a8a;
-  font-size: 1.2rem;
-  font-weight: 400;
-  transition: color 0.2s ease;
+  color: #444;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 10px;
+  transition: color 0.2s, background 0.2s;
 }
-
 .link:hover {
-  color: #3e3e3e;
+  color: #e11d48;
 }
 
 .burger {
   display: none;
-  border: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
   background: transparent;
   color: #333;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.burger:hover {
+  border-color: rgba(225, 29, 72, 0.30);
+  background: rgba(225, 29, 72, 0.05);
+  color: #e11d48;
 }
 
 .mobile {
-  border-top: 1px solid #ececec;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
   background: #fff;
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
+  padding: 10px 16px 16px;
+  gap: 2px;
 }
-
 .mobileLink {
   text-decoration: none;
-  color: #555;
-  padding: 10px 24px;
+  color: #444;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: color 0.2s, background 0.2s;
+}
+.mobileLink:hover {
+  color: #e11d48;
 }
 
 @media (max-width: 900px) {
-  .nav {
-    display: none;
-  }
-
-  .burger {
-    display: block;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
+  .inner { height: 84px; } .nav { display: none; } .burger { display: inline-flex; }
+  .logoImage { height: 56px; max-width: 200px; }
+}
+@media (max-width: 560px) {
+  .inner { height: 76px; } .logoImage { height: 48px; }
 }

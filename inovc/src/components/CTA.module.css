@@ -1,47 +1,51 @@
-﻿.about { background: #fff5f5; }
+﻿.about { background: #f8f8f8; }
 .aboutInner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .aboutText { display: flex; flex-direction: column; gap: 18px; }
-.grad { background: linear-gradient(135deg,#e11d48,#f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.aboutText p { color: #6b2737; font-size: 0.95rem; line-height: 1.75; }
-.aboutGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-content: start; margin-top: 16px; }
+.aboutText p { color: #444; font-size: 0.95rem; line-height: 1.8; }
+.grad { background: linear-gradient(135deg, #e11d48, #be123c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.aboutGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; margin-top: 16px; }
 .aboutStat {
-  background: #ffffff; border: 1px solid rgba(225,29,72,0.10);
-  border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 4px; cursor: default;
+  background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 24px;
+  display: flex; flex-direction: column; gap: 5px; cursor: default;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
+.aboutStat:hover { border-color: #e11d48; box-shadow: 0 4px 20px rgba(225,29,72,0.10); }
 .aboutStat strong { font-size: 2rem; font-weight: 900; letter-spacing: -0.04em; }
-.aboutStat span { font-size: 0.82rem; color: #9f4455; font-weight: 500; }
+.aboutStat span   { font-size: 0.82rem; color: #777; font-weight: 500; }
+
+/* CTA Banner */
 .ctaBanner {
   position: relative;
-  background: linear-gradient(135deg, #fff0f2 0%, #ffffff 50%, #fff8f0 100%);
-  padding: 100px 0; overflow: hidden;
+  background: linear-gradient(135deg, #fff0f3 0%, #ffffff 50%, #fff8f5 100%);
+  padding: 110px 0; overflow: hidden;
 }
-.glow {
-  position: absolute; width: 800px; height: 800px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(225,29,72,0.08) 0%, transparent 65%);
-  top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none;
-}
+.ctaBanner::before { display: none; }
+.glow { display: none; }
 .ctaInner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; position: relative; z-index: 1; }
 .ctaText { display: flex; flex-direction: column; gap: 20px; }
-.ctaText h2 { font-size: clamp(1.8rem,3vw,2.4rem); font-weight: 800; color: #1a0a0e; letter-spacing: -0.03em; line-height: 1.2; }
-.ctaText p { color: #6b2737; font-size: 1rem; line-height: 1.75; }
+.ctaText h2 { font-size: clamp(1.8rem,3vw,2.5rem); font-weight: 800; color: #111; letter-spacing: -0.04em; line-height: 1.15; }
+.ctaText p { color: #555; font-size: 1rem; line-height: 1.8; }
 .contacts { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
-.contact { display: flex; align-items: center; gap: 10px; color: #9f4455; font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
+.contact { display: flex; align-items: center; gap: 10px; color: #777; font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
 .contact:hover { color: #e11d48; }
+
+/* Form */
 .ctaForm {
   display: flex; flex-direction: column; gap: 12px;
-  background: #fff5f5; border: 1px solid rgba(225,29,72,0.14);
-  border-radius: 16px; padding: 28px; backdrop-filter: blur(12px);
+  background: #fff; border: 1px solid rgba(0,0,0,0.09); border-radius: 18px; padding: 28px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
 }
 .formGroup { display: flex; flex-direction: column; }
 .input, .textarea {
-  background: rgba(255,255,255,0.9); border: 1px solid rgba(225,29,72,0.12);
-  border-radius: 10px; padding: 12px 16px; color: #1a0a0e;
-  font-size: 0.9rem; font-family: Inter,sans-serif;
-  transition: border-color 0.25s, background 0.25s; outline: none; width: 100%;
+  background: #f8f8f8; border: 1px solid rgba(0,0,0,0.10); border-radius: 11px;
+  padding: 13px 16px; color: #111; font-size: 0.9rem; font-family: Inter, sans-serif;
+  transition: border-color 0.2s, background 0.2s; outline: none; width: 100%;
 }
-.input:focus, .textarea:focus { border-color: #e11d48; background: rgba(225,29,72,0.04); }
-.input::placeholder, .textarea::placeholder { color: #9f4455; }
-.textarea { resize: vertical; min-height: 80px; }
+.input::placeholder, .textarea::placeholder { color: #aaa; }
+.input:focus, .textarea:focus { border-color: #e11d48; background: #fff; }
+.textarea { resize: vertical; min-height: 88px; }
+
 @media (max-width: 900px) {
   .aboutInner { grid-template-columns: 1fr; gap: 40px; }
   .ctaInner { grid-template-columns: 1fr; gap: 40px; }

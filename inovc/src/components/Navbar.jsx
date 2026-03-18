@@ -22,8 +22,8 @@ export default function Navbar() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
-        <a className={styles.logo} href="/">
-          Med <span>ROBOTS</span>
+        <a className={styles.logo} href="/" aria-label="Ir para a página inicial">
+          <img src="/logo.png" alt="INOVC" className={styles.logoImage} />
         </a>
 
         <nav className={styles.nav}>
